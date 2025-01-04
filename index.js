@@ -1,8 +1,10 @@
 const express = require('express');
+const cors = require('cors')
 const { getData } = require('./data');
 const { sortedProducts, filterProducts } = require('./helperFunction');
 
 const app = express();
+app.use(cors())
 const port = 3000;
 
 app.get('/products/sort/popularity', (req, res) => {
